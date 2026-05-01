@@ -7,8 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BackEnd\Playground.BackEnd.csproj" />
-      <ProjectReference Include="..\Data\Playground.Data.csproj" />
       <ProjectReference Include="..\Lib\Playground.Lib.csproj" />
       <ProjectReference Include="..\Services\Playground.Services.csproj" />
     </ItemGroup>

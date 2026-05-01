@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using Playground.Data;
 using Microsoft.AspNetCore.Localization;
 using Playground.FrontEnd;
 using Playground.FrontEnd.Components.Dialog;
@@ -14,16 +11,6 @@ builder.Services.AddRazorComponents()
 
 // Register localization services
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
-
-// Register DbContext
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Add Identity
-builder.Services.AddDefaultIdentity<IdentityUser>()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
-
-builder.Services.AddScoped<AuthService>();
 
 builder.Services.AddAuthorizationCore();
 
