@@ -1,0 +1,22 @@
+@using Microsoft.JSInterop
+@inherits ComponentBase
+@inject IJSRuntime JS
+
+<div class="Tab-menu @(Parent.Variant)-menu  @Class">
+    <ul class="tab-list " @ref="TabsWrapperRef">
+        @for (int i = 0; i < Parent.Tabs.Count; i++)
+        {
+            var tab = Parent.Tabs[i];
+            if (tab != null)
+            {
+                <li>
+                    <button class="@(Parent.ActiveTab == tab ? "active" : "") @Parent.Variant"
+                            @onclick="@(() => HandleTabClick(tab))">
+                        @tab.Title
+                    </button>
+
+                </li>
+            }
+        }
+    </ul>
+</div>

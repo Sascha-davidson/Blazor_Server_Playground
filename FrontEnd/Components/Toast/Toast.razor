@@ -1,0 +1,54 @@
+﻿@inject ToastService ToastService
+
+<div class="toast-container">
+    @foreach (var toast in _toasts)
+    {
+        <div class="toast @GetToastClass(toast.Level) @(toast.Fading ? "fade-out" : "")">
+            @toast.Message
+        </div>
+    }
+</div>
+
+@code {
+    private List<ToastEntry> _toasts = new();
+
+    protected override void OnInitialized()
+    {
+        ToastService.OnShow += ShowToast;
+    }
+
+    private async void ShowToast(string message, ToastLevel level)
+    {
+        var toast = new ToastEntry
+            {
+                Message = message,
+                Level = level
+            };
+
+        _toasts.Add(toast);
+        await InvokeAsync(StateHasChanged);
+
+        await Task.Delay(5000); // show time
+        toast.Fading = true;
+        await InvokeAsync(StateHasChanged);
+
+        await Task.Delay(500); // fade-out duration
+        _toasts.Remove(toast);
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private string GetToastClass(ToastLevel level) => level switch
+    {
+        ToastLevel.Success => "toast-success",
+        ToastLevel.Error => "toast-error",
+        ToastLevel.Warning => "toast-warning",
+        _ => "toast-info"
+    };
+
+    private class ToastEntry
+    {
+        public string Message { get; set; } = string.Empty;
+        public ToastLevel Level { get; set; }
+        public bool Fading { get; set; } = false;
+    }
+    }

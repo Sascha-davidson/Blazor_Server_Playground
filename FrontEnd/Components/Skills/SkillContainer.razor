@@ -1,0 +1,13 @@
+﻿<div class="skill-container">
+    @foreach (var item in Enum.GetValues(typeof(Lib.Enums.SkillType)).Cast<Lib.Enums.SkillType>())
+    {
+        <SkillBox SkillColor="@item.GetDisplayColor()">
+            <SkillIcon Type="@item" />
+            <p>@item.GetDisplayValue()</p>
+        </SkillBox>
+    }
+</div>
+
+@code {
+
+}

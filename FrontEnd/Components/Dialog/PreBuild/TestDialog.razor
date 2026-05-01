@@ -1,0 +1,26 @@
+﻿@inject IDialogService DialogService
+
+<AppDialog>
+    <ChildContent>
+                <h3>Test Dialog</h3>
+                <input @bind="Name" placeholder="Enter name..." />
+    </ChildContent>
+    <Footer>
+        <button @onclick="Save">Save</button>
+        <button @onclick="Cancel">Cancel</button>
+    </Footer>
+</AppDialog>
+
+@code {
+    private string Name = string.Empty;
+
+    void Save()
+    {
+        DialogService.Close(Name);
+    }
+
+    void Cancel()
+    {
+        DialogService.Close<string>(null);
+    }
+}

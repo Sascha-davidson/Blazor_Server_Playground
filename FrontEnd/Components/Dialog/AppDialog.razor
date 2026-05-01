@@ -1,0 +1,82 @@
+﻿<dialog @ref="_dialog"
+        class="my-dialog"
+        @onkeydown="HandleKeyDown"
+        @oncancel="HandleNativeCancel">
+    <div class="dialog-content">
+        @if (Header is not null)
+        {
+            <header>
+                @Header
+            </header>
+        }
+
+        <div class="dialog-body">
+            @ChildContent
+        </div>
+        @if (Footer is not null)
+        {
+            <footer>
+                @Footer
+            </footer>
+        }
+    </div>
+</dialog>
+
+@implements IDisposable
+
+@code {
+    private ElementReference _dialog;
+    private DotNetObjectReference<AppDialog>? _dotNetRef;
+
+    [Parameter] public string Title { get; set; } = default!;
+    [Parameter] public RenderFragment? Header { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; } = default!;
+    [Parameter] public RenderFragment? Footer { get; set; }
+    [Parameter] public EventCallback OnClose { get; set; }
+
+    [Inject] private IJSRuntime JS { get; set; } = default!;
+
+    protected IDialogService DialogService { get; set; }
+
+    public AppDialog(IDialogService dialogService) => this.DialogService = dialogService;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && _dialog.Context != null)
+        {
+            _dotNetRef = DotNetObjectReference.Create(this);
+            await JS.InvokeVoidAsync("blazorDialog.open", _dialog, _dotNetRef);
+        }
+    }
+
+    public async Task Close()
+    {
+        await JS.InvokeVoidAsync("blazorDialog.close", _dialog);
+        DialogService.Close<object>(null);
+        await OnClose.InvokeAsync();
+    }
+
+    [JSInvokable]
+    public async Task OnBackdropClick()
+    {
+        await Close();
+    }
+
+    private async Task HandleNativeCancel()
+    {
+        await Close();
+    }
+
+    private async Task HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Escape")
+        {
+            await Close();
+        }
+    }
+
+    public void Dispose()
+    {
+        _dotNetRef?.Dispose();
+    }
+}

@@ -1,0 +1,24 @@
+﻿.content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas: 'header header'
+        'aside main';
+}
+
+aside {
+    grid-area: aside;
+    z-index: 3;
+}
+
+header {
+    grid-area: header;
+    z-index: 2;
+    background-color: #11121a;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    align-items: center;
+    padding: 2rem;
+}

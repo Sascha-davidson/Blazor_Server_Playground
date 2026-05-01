@@ -1,0 +1,71 @@
+nav.navbar {
+    padding: 1rem var(--side-site-padding, 5vw);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+
+::deep .logo {
+    display: grid;
+    width: fit-content;
+}
+
+    ::deep .logo svg {
+        height: 2lh;
+    }
+
+ul {
+    width: fit-content;
+    display: flex;
+    gap: .5rem;
+}
+
+li {
+    list-style-type: none;
+    display: flex;
+}
+
+::deep .nav-link {
+    color: white;
+    padding: .5rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+    ::deep .nav-link:hover {
+        color: var(--color-primary);
+    }
+
+    ::deep .nav-link.active {
+        color: var(--color-primary);
+    }
+
+::deep .nav-action-link {
+    padding: .5rem 1rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: black;
+    border-radius: 50rem;
+}
+
+    ::deep .nav-action-link:hover {
+        background-color: #1f8062;
+    }
+
+    ::deep .nav-action-link.active {
+        background-color: #1f8062;
+    }
+
+@media (prefers-reduced-motion: no-preference) {
+    ::deep .nav-link,
+    ::deep .nav-action-link {
+        transition: all .2s ease-in-out;
+    }
+}
+

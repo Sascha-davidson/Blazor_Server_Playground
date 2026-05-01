@@ -1,0 +1,22 @@
+main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.bleur {
+    position: absolute;
+    inset: 0;
+    z-index: 10100;
+    /* filter: blur(3px); */
+    backdrop-filter: blur(3px);
+}
+
+.content{
+    padding: 2rem;
+    background-color: lightgray;
+}
+
+.highlight {
+    z-index: 10101;
+}

@@ -1,0 +1,10 @@
+﻿svg {
+    fill: #fff;
+}
+
+.svg-shadow {
+    stroke: rgb(var(--border-color));
+    stroke-opacity: var(--border-opacity);
+    stroke-width: 2px;
+    fill: none;
+}

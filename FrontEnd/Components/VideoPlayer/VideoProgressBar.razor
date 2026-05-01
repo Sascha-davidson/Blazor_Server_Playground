@@ -1,0 +1,18 @@
+﻿@using System.Globalization
+@inherits ComponentBase
+
+<div class="progress-bar-container" @onmousedown="OnMouseDown">
+    <div class="progress-bar" @ref="progressBarRef">
+        <div class="progress-list">
+            <div class="play-progress" style="width:@FormatPercent(playPercent)"></div>
+            <div class="buffer-progress" style="width:@FormatPercent(bufferPercent)"></div>
+            <div class="load-progress" style="width:@FormatPercent(loadPercent)"></div>
+            <div class="Mouse-hover"></div>
+        </div>
+        <div class="hover"></div>
+        <div class="Timed-Marker"></div>
+        <div class="scrubber-container" style="left:@FormatPercent(playPercent)">
+            <div class="scrubber-button"></div>
+        </div>
+    </div>
+</div>

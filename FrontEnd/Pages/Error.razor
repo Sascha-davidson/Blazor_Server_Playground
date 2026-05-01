@@ -1,0 +1,53 @@
+﻿@page "/error/test"
+@using System.Collections
+
+<PageTitle>@Global.FullName</PageTitle>
+
+<div class="contact-details">
+    <h1><span class="primary-color">@Global.FirstName</span> @Global.LastName</h1>
+
+    <p>
+        ComingSoonForFurtherInformationPleaseContactMeAt
+        <br />
+        <a href="@Global.MailLink" class="primary-color">@Global.Mail</a>
+        &
+        <a href="@Global.PhoneLink" class="primary-color">@Global.Phone</a>
+    </p>
+
+    <div class="btn-container">
+        <button @onclick="TriggerCrash">Trigger component crashCrash</button>
+        <button @onclick="TriggerPageCrash">Trigger page crashCrash</button>
+    </div>
+
+    <ErrorBoundary>
+        <ErrorContent>
+            <p class="blazor-error-boundary">An error has occurred. Please try again later.</p>
+        </ErrorContent>
+        <ChildContent>
+            @if (shouldCrash)
+            {
+                throw new InvalidOperationException("Crash triggered via button.");
+            }
+            else
+            {
+                <p>This is a componenent sample</p>
+            }
+        </ChildContent>
+    </ErrorBoundary>
+</div>
+
+
+
+@code {
+    private void TriggerPageCrash()
+    {
+        throw new InvalidOperationException("This is a test crash.");
+    }
+
+    private bool shouldCrash = false;
+
+    private void TriggerCrash()
+    {
+        shouldCrash = true;
+    }
+}

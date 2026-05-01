@@ -1,0 +1,25 @@
+div {
+	--tab-view: tab-view;
+	flex: 1;
+	overflow: hidden;
+	display: grid;
+	container: var(--tab-view) / inline-size;
+	position: relative;
+}
+
+	div ::deep .VerticalSettings-menu {
+		position: absolute;
+		inset: 0;
+		background: white;
+		z-index: 3;
+		overflow: auto;
+		scrollbar-gutter: stable;
+		scrollbar-color: rgba(0, 0, 0, .2) transparent;
+	}
+
+
+		div ::deep .VerticalSettings-menu .tab-list {
+			flex-direction: column;
+			padding: 2rem 5vw;
+			width: 100%;
+		}

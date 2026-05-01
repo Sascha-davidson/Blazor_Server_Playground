@@ -1,0 +1,80 @@
+﻿@inject IDialogService DialogService
+@inject IJSRuntime JS
+@inject NavigationManager Navigation
+@implements IDisposable
+
+@if (_dialogs.Count > 0)
+{
+    @foreach (var dlg in _dialogs)
+    {
+        <DynamicComponent Type="dlg.ComponentType" Parameters="dlg.Parameters" />
+    }
+}
+
+@code {
+    private List<DialogInstance> _dialogs = new();
+    private bool _initialCheckDone;
+
+    protected override void OnInitialized()
+    {
+        DialogService.OnDialogOpen += HandleDialogOpen;
+        DialogService.OnDialogClose += HandleDialogClose;
+        Navigation.LocationChanged += HandleLocationChanged;
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender && !_initialCheckDone)
+        {
+            _initialCheckDone = true;
+            TryOpenDialogFromUrl();
+        }
+    }
+
+    private void HandleDialogOpen(DialogInstance instance)
+    {
+        _dialogs.Add(instance);
+        StateHasChanged();
+    }
+
+    private void HandleDialogClose(DialogInstance instance)
+    {
+        _dialogs.Remove(instance);
+        StateHasChanged();
+    }
+
+    private void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        if (_dialogs.Count == 0)
+        {
+            TryOpenDialogFromUrl();
+        }
+    }
+
+    private void TryOpenDialogFromUrl()
+    {
+        var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        var dialogName = query["dialog"];
+
+        if (!string.IsNullOrEmpty(dialogName) && _dialogs.Count == 0)
+        {
+            var dialogType = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(a => { try { return a.GetTypes(); } catch { return []; } })
+                .FirstOrDefault(t => t.Name == dialogName && typeof(ComponentBase).IsAssignableFrom(t));
+
+            if (dialogType != null)
+            {
+                _ = DialogService.ShowByTypeAsync(dialogType);
+                StateHasChanged();
+            }
+        }
+    }
+
+    public void Dispose()
+    {
+        DialogService.OnDialogOpen -= HandleDialogOpen;
+        DialogService.OnDialogClose -= HandleDialogClose;
+        Navigation.LocationChanged -= HandleLocationChanged;
+    }
+}

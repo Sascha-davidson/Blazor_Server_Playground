@@ -1,0 +1,42 @@
+﻿.popup {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 2px;
+    background: rgba(28, 28, 28, .9);
+    text-shadow: 0 0 2px rgba(0, 0, 0, .5);
+    -webkit-transition: opacity .1s cubic-bezier(0,0,.2,1);
+    transition: opacity .1s cubic-bezier(0,0,.2,1);
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+
+    width: 100%;
+    max-width: 300px;
+    max-height: 75%;
+    display: grid;
+}
+
+.settings-menu {
+    right: 12px;
+    bottom: 61px;
+    z-index: 70;
+    border-radius: 12px;
+}
+
+.panel {
+    overflow-y: auto;
+}
+
+::deep button{
+    color: white;
+    width: 100%;
+}
+
+::deep button:hover{
+    background-color: rgba(255,255,255,.15);
+}
+
+sup{
+    padding-left: .5rem;
+    color: #ccc;
+}

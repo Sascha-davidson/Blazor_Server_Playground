@@ -1,0 +1,22 @@
+.content {
+    --side-site-padding: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    padding: 1rem var(--side-site-padding, 5vw);
+    margin: 0 auto;
+}

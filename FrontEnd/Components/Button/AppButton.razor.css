@@ -1,0 +1,13 @@
+﻿body {
+}
+
+
+button.empty{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: transparent;
+    border-color: transparent;
+    padding: .8rem;
+    text-align: left;
+}

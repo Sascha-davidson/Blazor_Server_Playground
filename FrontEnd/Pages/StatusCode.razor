@@ -1,0 +1,47 @@
+﻿@page "/StatusCode/{status:int}"
+@layout EmptyLayout
+
+<div class="status-container">
+    @switch (Status)
+    {
+        case 400:
+            <PageTitle>@Status</PageTitle>
+            <p>Bad Request — The server could not understand the request due to invalid syntax.</p>
+            break;
+
+        case 403:
+            <PageTitle>@Status</PageTitle>
+            <p>Forbidden — You don't have permission to access this resource.</p>
+            break;
+
+        case 404:
+            <PageTitle>@Status</PageTitle>
+            <p>Page not found — There is nothing at this url.</p>
+            break;
+
+        case 408:
+            <PageTitle>@Status</PageTitle>
+            <p>Request Timeout — The server timed out waiting for the request.</p>
+            break;
+
+        case 500:
+            <PageTitle>@Status</PageTitle>
+            <p>Internal Server Error — Something went wrong on our end.</p>
+            break;
+
+        case 503:
+            <PageTitle>@Status</PageTitle>
+            <p>Service Unavailable — The server is not ready to handle the request.</p>
+            break;
+
+        default:
+            <PageTitle>@Status</PageTitle>
+            <p>Unknown Error — Status code not recognized.</p>
+            break;
+    }
+</div>
+
+@code {
+    [Parameter]
+    public int Status { get; set; }
+}

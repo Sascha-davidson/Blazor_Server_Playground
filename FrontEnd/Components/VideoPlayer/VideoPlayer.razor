@@ -1,0 +1,14 @@
+﻿<CascadingValue Value="this">
+    <div @ref="playerContainer" class="video-container @(IsPaused ? "active" : "")" @onmousemove="FullScreenMenuToggle">
+        <video @ref="videoRef" class="video-player" @onclick="TogglePlayPauseAsync">
+            <source src="@Source" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <VideoControls />
+    </div>
+</CascadingValue>
+
+@code {
+
+}

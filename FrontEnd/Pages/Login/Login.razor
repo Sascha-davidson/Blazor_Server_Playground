@@ -1,0 +1,37 @@
+﻿@page "/Login"
+
+<EditForm Model="@loginModel" OnValidSubmit="@HandleLogin">
+    <InputText @bind-Value="loginModel.Email" placeholder="Email" />
+    <InputText @bind-Value="loginModel.Password" type="password" placeholder="Password" />
+    <button type="submit">Sign in</button>
+</EditForm>
+
+@code {
+    private LoginModel loginModel = new();
+
+    private class LoginModel
+    {
+        public string Email { get; set; } = "";
+        public string Password { get; set; } = "";
+    }
+
+    private async Task HandleLogin()
+    {
+        var result = await SignInManager.PasswordSignInAsync(
+            loginModel.Email,
+            loginModel.Password,
+            isPersistent: true,
+            lockoutOnFailure: false
+        );
+
+        if (result.Succeeded)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            // Show error (add proper UI)
+            Console.WriteLine("Invalid login");
+        }
+    }
+}

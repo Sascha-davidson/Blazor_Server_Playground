@@ -1,0 +1,371 @@
+/* Sora variable font normal
+------------------------------------------------- */
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 100 800; /* Range of weights for variable fonts */
+    font-display: swap;
+    src: url('https://example.com/font-variable.woff2') format('woff2-variations'), 
+         url('https://example.com/font-variable.woff') format('woff'), 
+         url('https://example.com/font-variable.ttf') format('truetype');
+}
+
+/* Sora fallback font normal
+------------------------------------------------- */
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSn0-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSn0-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSn0-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSnk-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSnk-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSnk-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmScMnk-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmScMnk-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmScMnk-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSnk-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSnk-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSnk-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdgnk-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdgnk-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdgnk-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSeMmU-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSeMmU-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSeMmU-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSe1mU-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSe1mU-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSe1mU-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSmU-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSmU-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSmU-DKQc.ttf) format('truetype');
+}
+
+/* Sora variable font italic
+------------------------------------------------- */
+@font-face {
+    font-family: 'Sora';
+    font-style: italic;
+    font-weight: 100 800; /* Range of weights for variable fonts */
+    font-display: swap;
+    src: url('https://example.com/font-variable.woff2') format('woff2-variations'), 
+         url('https://example.com/font-variable.woff') format('woff'), 
+         url('https://example.com/font-variable.ttf') format('truetype');
+}
+
+/* Sora fallback font italic
+------------------------------------------------- */
+@font-face {
+    font-family: 'Sora';
+    font-style: italic;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSn0-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSn0-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSn0-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: italic;
+    font-weight: 200;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSnk-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSnk-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSnk-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmScMnk-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmScMnk-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmScMnk-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSnk-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSnk-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdSnk-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdgnk-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdgnk-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSdgnk-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSeMmU-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSeMmU-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSeMmU-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSe1mU-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSe1mU-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSe1mU-DKQc.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Sora';
+    font-style: italic;
+    font-weight: 800;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSmU-DKQI.woff2) format('woff2'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSmU-DKQQ.woff) format('woff'), 
+         url(https://fonts.gstatic.com/s/sora/v11/xMQOuFFYT72X5wkB_18qmnndmSfSmU-DKQc.ttf) format('truetype');
+}
+
+:root {
+    /*color
+    ------------------------------------------------- */
+    --color-primary: #6CFFD1;
+    --color-secondary: #133416;
+    --color-tertiary: 235C28;
+    --color-light: #f5f5f5;
+    --color-dark: #141414;
+    --color-background: #282A39;
+    /* feedback color
+    ------------------------------------------------- */
+    --color-success: #5CD000;
+    --color-error: #FF0B0B;
+    --color-color-warning: #ffd137;
+    --color-super-user: #BC23D6;
+    /* gray tone color
+    ------------------------------------------------- */
+    --color-gray-000: #ffffff;
+    --color-gray-100: #E6E6E6;
+    --color-gray-200: #CCCCCC;
+    --color-gray-300: #B3B3B3;
+    --color-gray-400: #999999;
+    --color-gray-500: #808080;
+    --color-gray-600: #666666;
+    --color-gray-700: #4D4D4D;
+    --color-gray-800: #333333;
+    --color-gray-900: #1A1A1A;
+    --color-gray-1000: #000000;
+    /* background color
+    ------------------------------------------------- */
+    --color-bg-light: #F4F5EE;
+    --color-bg-secondary: #F4F5EE;
+    /*border radius
+    ------------------------------------------------- */
+    --radius: 1em;
+    --radius-xxs: calc(0.25 * var(--radius-unit));
+    --radius-xs: calc(0.5 * var(--radius-unit));
+    --radius-s: calc(0.75 * var(--radius-unit));
+    --radius-m: calc(1.25 * var(--radius-unit));
+    --radius-l: calc(2 * var(--radius-unit));
+    --radius-xl: calc(3.25 * var(--radius-unit));
+    --radius-xxl: calc(5.25 * var(--radius-unit));
+    /*border
+    ------------------------------------------------- */
+    --border-size: 0.06em; /* 1px */
+    --border-color: var(--color-gray-200);
+    --border-type: solid;
+    --border: var(--border-size) var(--border-type) var(--border-color);
+    /*shadow
+    ------------------------------------------------- */
+    --x: 0px;
+    --y: 4px;
+    --blur: 6px;
+    --spread: 1px;
+    --opacity-s: .25;
+    --opacity-m: .50;
+    --opacity-l: .75;
+    --color-shadow: 0,0,0;
+    --shadow: var(--x) var(--y) var(--blur) rgba(var(--color-shadow), var(--opacity-s));
+    --shadow-border: var(--x) var(--y) var(--blur) rgba(var(--color-shadow), var(--opacity)), 0px 0px 0px var(--spread) rgba(var(--color-shadow), var(--opacity-M));
+    /*space system
+    ------------------------------------------------- */
+    --space-unit: 1em;
+    --space-xxs: calc(0.25 * var(--space-unit)); /* 4px */
+    --space-xs: calc(0.5 * var(--space-unit)); /* 8px */
+    --space-s: calc(0.75 * var(--space-unit)); /* 12px */
+    --space-m: calc(1.25 * var(--space-unit)); /* 20px */
+    --space-l: calc(2 * var(--space-unit)); /* 32px */
+    --space-xl: calc(3.25 * var(--space-unit)); /* 52px */
+    --space-xxl: calc(5.25 * var(--space-unit)); /* 84px */
+    /*font size
+    ------------------------------------------------- */
+    --font-size: 1em;
+    --min-font-size: calc(var(--font-size) * 0.875); /* 14px */
+    --max-font-size: calc(var(--font-size) * 1.25); /* 20px */
+    --vw: 10vw;
+    --font-s: clamp(var(--min-font-size), var(--vw), var(--max-font-size));
+    --font-m: clamp(calc(1.20 * var(--min-font-size)), var(--vw), calc(1.20 * var(--max-font-size)));
+    --font-l: clamp(calc(1.40 * var(--min-font-size)), var(--vw), calc(1.40 * var(--max-font-size)));
+    --font-xl: clamp(calc(1.60 * var(--min-font-size)), var(--vw), calc(1.60 * var(--max-font-size)));
+    --font-xxl: clamp(calc(1.80 * var(--min-font-size)), var(--vw), calc(1.80 * var(--max-font-size)));
+    /*weight
+    ------------------------------------------------- */
+    --weight: 500;
+    --light-weight: 100;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    }
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@supports (scrollbar-color: auto) {
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-primary, #6CFFD1) var(--color-background, #282A39);
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    font-family: 'Sora', Arial, Helvetica, sans-serif;
+    font-size: var(--min-font-size);
+    line-height: 1.5;
+    color: var(--color-light, #f5f5f5);
+    background-color: #232533;
+}
+
+/* Commponents reconnect modal
+------------------------------------------------------------------- */
+
+#components-reconnect-modal {
+    background: rgba(0, 0, 0, 0.85);
+    color: black;
+    font-family: system-ui, sans-serif;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+    #components-reconnect-modal h5 {
+        margin: 0 0 0.5rem 0;
+        font-weight: bold;
+    }
+
+    #components-reconnect-modal a {
+        color: #20906d;
+        cursor: pointer;
+    }
+
+    #components-reconnect-modal button {
+        color: #20906d;
+        background: unset;
+        border: 1px solid #20906d;
+        border-radius: .3rem;
+        padding: .5lh .8lh;
+        cursor: pointer;
+    }
+
+/* blazor error ui
+------------------------------------------------------------------- */
+
+#blazor-error-ui {
+    background: #11121a;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .reload {
+        color: var(--color-primary);
+    }
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+/* blazor error bondary
+------------------------------------------------------------------- */
+
+.blazor-error-boundary {
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=) no-repeat 1rem/1.8rem, #b32121;
+    padding: 1rem 1rem 1rem 3.7rem;
+    color: white;
+}

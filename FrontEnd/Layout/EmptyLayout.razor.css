@@ -1,0 +1,9 @@
+﻿.content {
+    display: grid;
+    grid-template-areas: 'main';
+}
+
+main {
+    grid-area: main;
+    display: grid;
+}

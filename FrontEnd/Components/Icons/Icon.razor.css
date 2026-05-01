@@ -1,0 +1,7 @@
+svg {
+	fill: black;
+}
+
+	svg.super-user {
+		fill: var(--color-super-user);
+	}

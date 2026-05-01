@@ -1,0 +1,21 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+
+<Toast />
+
+<div class="content">
+    <header id="mainHeader">
+        <HeaderMenu />
+
+    </header>
+
+    <main>
+        @Body
+    </main>
+
+    <DialogHost />
+</div>
+
+@code {
+
+}

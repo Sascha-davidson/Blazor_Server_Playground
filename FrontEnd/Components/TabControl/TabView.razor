@@ -1,0 +1,8 @@
+@if (Parent.ActiveTab == this)
+{
+    <CascadingValue Value="this">
+        <div class="tab-view @(Parent.Variant)-view" style="--tab-view: @(Parent.Variant.ToString().ToLower())-tab-view;">
+            @ChildContent
+        </div>
+    </CascadingValue>
+}

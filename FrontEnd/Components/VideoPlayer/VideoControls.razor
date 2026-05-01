@@ -1,0 +1,51 @@
+﻿@inherits ComponentBase
+
+<div class="gradient-bottom"></div>
+<div class="Video-Controls">
+    <VideoProgressBar />
+    <div class="controls">
+        <div class="controls-left">
+            <a role="button" aria-label="Opn. afspelen" data-tooltip-title="">
+                <VideoPlayerIcon Icon="VideoPlayerIcon.VideoIcon.RePlay" />
+            </a>
+            <button @onclick="TogglePlay">
+                <VideoPlayerIcon Icon="@(Player?.IsPlaying ?? false ? VideoPlayerIcon.VideoIcon.Pause : VideoPlayerIcon.VideoIcon.Play)" />
+            </button>
+            <a>
+                <VideoPlayerIcon Icon="@VideoPlayerIcon.VideoIcon.Next" />
+            </a>
+            <button>
+                <VideoPlayerIcon Icon="VideoPlayerIcon.VideoIcon.VolumeLow" />
+            </button>
+            <p class="video-time">
+                <span class="time-current">@currentTime</span>
+                <span class="time-seperator"> / </span>
+                <span class="time-duration">@duration</span>
+            </p>
+        </div>
+        <div class="controls-right">
+            <button>
+                <VideoPlayerIcon Icon="VideoPlayerIcon.VideoIcon.Subtitles" />
+            </button>
+            <button @onclick="ToggleSettings">
+                <VideoPlayerIcon Icon="VideoPlayerIcon.VideoIcon.Settings" />
+            </button>
+            <button>
+                <VideoPlayerIcon Icon="VideoPlayerIcon.VideoIcon.PictureInPicture" />
+            </button>
+            @*
+                <button @onclick="ToggleCasting">
+                    <VideoPlayerIcon Icon="VideoPlayerIcon.VideoIcon.Casting" />
+                </button>
+            *@
+            <button @onclick="ToggleFullScreen">
+                <VideoPlayerIcon Icon="VideoPlayerIcon.VideoIcon.FullScreen" />
+            </button>
+        </div>
+    </div>
+</div>
+
+@if (showSettings)
+{
+    <VideoPlayerSettings OnClose="CloseSettings" />
+}

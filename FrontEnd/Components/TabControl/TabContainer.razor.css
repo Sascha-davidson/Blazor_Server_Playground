@@ -1,0 +1,25 @@
+.tab-container {
+	--tab-container: tab-container;
+	--padding: .8rem;
+	display: flex;
+	overflow: hidden;
+	container: var(--tab-container) / inline-size;
+}
+
+.Default {
+	flex-direction: column;
+}
+
+.VerticalSettings{
+	flex-direction: column;
+}
+
+.HorizontalSettings {
+	flex-direction: column;
+}
+
+@container (width > 800px) {
+	.HorizontalSettings {
+		flex-direction: row;
+	}
+}

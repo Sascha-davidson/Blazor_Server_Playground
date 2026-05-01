@@ -1,0 +1,191 @@
+.Tab-menu {
+	--black-rgb: 0, 0, 0;
+	display: flex;
+	gap: .5rem;
+}
+
+.tab-arrow {
+	padding: .8rem;
+	background-color: rgba(0,0,0,0.8);
+	top: 1rem;
+	border-radius: 50%;
+	height: fit-content;
+}
+
+	.tab-arrow svg {
+		fill: white;
+	}
+
+	.tab-arrow.hidden {
+		display: none;
+	}
+
+.HorizontalSettings-menu button {
+	all: revert;
+	box-sizing: border-box;
+	cursor: pointer;
+	font-size: 1.4rem;
+}
+
+.tab-list {
+	display: flex;
+	gap: .5rem;
+	scrollbar-gutter: stable;
+	scrollbar-color: rgba(0, 0, 0, .2) transparent;
+}
+
+	.tab-list li {
+		display: grid;
+	}
+
+
+.tab-arrow svg {
+	height: 1lh;
+	width: auto;
+}
+
+.tab-arrow.left svg {
+	transform: rotate(180deg);
+}
+
+@media (pointer: coarse), (hover: none) {
+	::deep .tab-arrow {
+		display: none;
+	}
+}
+
+::deep button.tab-arrow.left {
+}
+
+::deep button.tab-arrow.right {
+	right: 0;
+}
+
+::deep button.hidden {
+	display: none;
+}
+
+::deep .save{
+	position: sticky;
+	right: 0;
+}
+
+/* Default settings menu
+------------------------------------------------------------------------- */
+
+.Default-menu .tab-list {
+	overflow: auto;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(var(--black-rgb), .2) transparent;
+}
+
+/* VerticalSettings settings menu
+------------------------------------------------------------------------- */
+
+.VerticalSettings-menu {
+	flex-direction: row;
+	overflow-y: auto;
+
+}
+
+	.VerticalSettings-menu .tab-list {
+		overflow-x: auto;
+	}
+
+	.VerticalSettings-menu button {
+		all: revert;
+		box-sizing: border-box;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		padding: var(--padding);
+		border-radius: .5rem;
+		font-size: 1.4rem;
+		border-bottom: 2px solid transparent;
+		white-space: nowrap;
+		display: flex;
+		align-items: center;
+	}
+
+		.VerticalSettings-menu button.active {
+			background-color: #D1F951;
+		}
+
+.sub-tab-list {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	z-index: 2;
+	padding: 1rem;
+	background: white;
+}
+
+@container (width > 800px) {
+	.VerticalSettings-menu {
+		padding-right: 0;
+	}
+
+	.VerticalSettings .tab-list {
+		flex-direction: row;
+	}
+
+	.sub-tab-list {
+		display: none;
+	}
+}
+
+/* Horizontal settings menu
+------------------------------------------------------------------------- */
+.HorizontalSettings-menu {
+	flex-direction: row;
+	border-bottom: 1px solid #ccc;
+}
+
+	.HorizontalSettings-menu .tab-list {
+		flex-direction: row;
+		padding: 20px 5vw;
+		overflow-x: auto;
+	}
+
+	.HorizontalSettings-menu button {
+		all: revert;
+		box-sizing: border-box;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		padding: var(--padding);
+		border-radius: .5rem;
+		font-size: 1.4rem;
+		border-bottom: 2px solid transparent;
+		white-space: nowrap;
+		display: flex;
+		align-items: center;
+	}
+
+		.HorizontalSettings-menu button.active {
+			background-color: #D1F951;
+		}
+
+@container (width > 800px) {
+	.HorizontalSettings-menu {
+		flex-direction: column;
+		flex: 1;
+		padding-right: 0;
+		max-width: calc(5vw + 30rem);
+		border-right: 1px solid #ccc;
+		border-bottom: unset;
+	}
+
+		.HorizontalSettings-menu .tab-list {
+			flex-direction: column;
+			padding-right: 40px;
+			overflow-x: auto;
+		}
+
+	.HorizontalSettings-menu button {
+		white-space: break-spaces;
+		text-align: left;
+	}
+}

@@ -1,0 +1,61 @@
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
+using Playground.FrontEnd.Base.Functions;
+using Playground.Services;
+
+namespace Playground.FrontEnd.Base
+{
+    public class BaseComponent : ComponentBase, IAsyncDisposable
+    {
+        [Inject] protected IJSRuntime JsRuntime { get; set; } = default!;
+        [Inject] protected ToastService ToastService { get; set; } = default!;
+        [Inject] protected NavigationManager Navigation { get; set; } = default!;
+        [Inject] protected IDialogService DialogService { get; set; } = default!;
+
+        private DeviceDetected? _deviceDetected;
+        private QueryHelper? _queryHelper;
+        private BreakPoint? _breakPoint;
+        private Func<Task>? _breakPointChangedHandler;
+
+        protected bool IsDesktop =>
+            _deviceDetected is { IsDetected: true, ShowDesktop: true };
+
+        protected QueryHelper QueryHelper => _queryHelper ??= new QueryHelper(Navigation);
+
+        protected int CurrentWidth => _breakPoint?.CurrentWidth ?? 0;
+        
+        [Parameter]
+        public int DefaultBreakpoint { get; set; } = 800;
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            await base.OnAfterRenderAsync(firstRender);
+
+            if (!firstRender)
+                return;
+
+            _deviceDetected ??= new DeviceDetected(JsRuntime);
+            await _deviceDetected.DetectAsync();
+
+            if (_breakPoint == null)
+            {
+                _breakPoint = new BreakPoint(JsRuntime);
+                _breakPointChangedHandler = async () => await InvokeAsync(StateHasChanged);
+                _breakPoint.OnChange += _breakPointChangedHandler;
+
+                await _breakPoint.DetectAsync(DefaultBreakpoint);
+            }
+
+            await InvokeAsync(StateHasChanged);
+        }
+
+        public async ValueTask DisposeAsync()
+        {
+            if (_breakPoint != null && _breakPointChangedHandler != null)
+            {
+                _breakPoint.OnChange -= _breakPointChangedHandler;
+                await _breakPoint.DisposeAsync();
+            }
+        }
+    }
+}

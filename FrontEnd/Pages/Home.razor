@@ -1,0 +1,98 @@
+﻿@page "/"
+@inherits BaseComponent
+
+<PageTitle>@Global.FullName</PageTitle>
+
+<div class="contact-details">
+    <h1><span class="primary-color">@Global.FirstName</span> @Global.LastName</h1>
+
+    <SkillContainer />
+
+    <AppButton onclick="ShowToast">Show Toast</AppButton>
+
+    <VideoPlayer Source="https://vaibhav1663.github.io/Youtube-Ambient-Mode/demo-video.mp4" />
+</div>
+
+@if (IsDesktop)
+{
+    <p>this is on desktop only</p>
+}
+
+@if (CurrentWidth >= 800)
+{
+    <p>this is the 800px breakpoint</p>
+}
+else
+{
+    <p>below 800px</p>
+}
+
+<TabContainer TabKey="test" InitialPage="@_outerTab.ToString()">
+    <TabMenu />
+    <TabView Title="outer 1" Tab="outer1">tab 1</TabView>
+    <TabView Title="outer 2" Tab="outer2">tab 2</TabView>
+    <TabView Title="outer 3" Tab="outer3">
+        tab 3
+        <TabContainer TabKey="subtab" InitialPage="@_innerTab.ToString()">
+            <TabMenu />
+            <TabView Title="home" Tab="home">subtab 1</TabView>
+            <TabView Title="about Me" Tab="aboutme">subtab 2</TabView>
+            <TabView Title="tester" Tab="tester">subtab 3</TabView>
+        </TabContainer>
+    </TabView>
+</TabContainer>
+
+<AppButton Color="Color.Primary" Variant="Variant.Solid" Size="Size.Medium">Test</AppButton>
+
+<AppButton Color="Color.Primary" Variant="Variant.Solid" Size="Size.Medium" OnClick="OpenDialog">Open Test Dialog</AppButton>
+
+
+@code {
+    private OuterTab _outerTab = OuterTab.Outer1;
+    private InnerTab _innerTab = InnerTab.Home;
+    private readonly OuterTab[] _validOuterTabs = { OuterTab.Outer1, OuterTab.Outer2, OuterTab.Outer3 };
+    private readonly InnerTab[] _validInnerTabs = { InnerTab.Home, InnerTab.AboutMe, InnerTab.Tester };
+
+    private Guid TabKey { get; set; } = Guid.NewGuid();
+    private TabContainer? innerContainer;
+
+    protected void OnInitialized()
+    {
+        var outerTabParam = QueryHelper.QueryParam("tab", _outerTab.ToString())!;
+        var innerTabParam = QueryHelper.QueryParam("subtab", _innerTab.ToString())!;
+
+        if (!Enum.TryParse<OuterTab>(outerTabParam, ignoreCase: true, out _outerTab))
+            _outerTab = OuterTab.Outer1;
+
+        if (!Enum.TryParse<InnerTab>(innerTabParam, ignoreCase: true, out _innerTab))
+            _innerTab = InnerTab.Home;
+    }
+
+    private void ShowToast()
+    {
+        ToastService.ShowToast("This is a global toast!", ToastLevel.Success);
+    }
+
+    private async Task OpenDialog()
+    {
+        var result = await DialogService.ShowAsync<TestDialog, string>();
+        if (result != null)
+        {
+            Console.WriteLine($"Name entered: {result}");
+        }
+    }
+    
+    public enum InnerTab
+    {
+        Home,
+        AboutMe,
+        Tester
+    }
+
+    public enum OuterTab
+    {
+        Outer1,
+        Outer2,
+        Outer3
+    }
+}

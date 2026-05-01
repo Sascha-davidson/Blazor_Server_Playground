@@ -1,0 +1,27 @@
+﻿div.contact-details {
+    display: grid;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 10rem 0;
+}
+
+a{
+    color: var(--color-primary);
+}
+
+.btn-container{
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding: .5rem .8rem;
+    border-radius: .4rem;
+    width: fit-content;
+    background-color: transparent;
+    cursor: pointer;
+}

@@ -1,0 +1,81 @@
+﻿<div class="popup settings-menu">
+    <div class="panel">
+        @switch (SettingsMenuType)
+        {
+            case VideoSettingsMenuType.Video:
+                <ul>
+                    <li>
+                        <AppButton Variant="Variant.Empty" OnClick="() => SettingsMenuType = VideoSettingsMenuType.Quality">
+                            <VideoPlayerIcon Icon="VideoPlayerIcon.VideoIcon.Quality" />
+                            Quality
+                        </AppButton>
+                    </li>
+                    <li>
+                        <AppButton Variant="Variant.Empty" OnClick="() => SettingsMenuType = VideoSettingsMenuType.Language">
+                            <VideoPlayerIcon Icon="VideoPlayerIcon.VideoIcon.SubTitlesSettings" />
+                            subTitles
+                        </AppButton>
+                    </li>
+                    <li>
+                        <AppButton Variant="Variant.Empty" OnClick="() => SettingsMenuType = VideoSettingsMenuType.DisplaySpeed">
+                            <VideoPlayerIcon Icon="VideoPlayerIcon.VideoIcon.VideoSpeed" />
+                            Display Speed
+                        </AppButton>
+                    </li>
+                    <AppButton Variant="Variant.Empty" OnClick=@OnClose>close</AppButton>
+                </ul>
+                break;
+
+            case VideoSettingsMenuType.Quality:
+                <div class="@VideoSettingsMenuType.Quality.ToString().ToLower()">
+                    <AppButton Variant="Variant.Empty" OnClick="() => SettingsMenuType = VideoSettingsMenuType.Video">← Back</AppButton>
+                    <ul>
+                        <li><AppButton Variant="Variant.Empty" OnClick=@OnClose>1080p</AppButton></li>
+                        <li><AppButton Variant="Variant.Empty" OnClick=@OnClose>720p</AppButton></li>
+                        <li><AppButton Variant="Variant.Empty" OnClick=@OnClose>480p</AppButton></li>
+                        <li><AppButton Variant="Variant.Empty" OnClick=@OnClose>360p</AppButton></li>
+                        <li><AppButton Variant="Variant.Empty" OnClick=@OnClose>240p</AppButton></li>
+                        <li><AppButton Variant="Variant.Empty" OnClick=@OnClose>144p</AppButton></li>
+                        <li><AppButton Variant="Variant.Empty" OnClick=@OnClose>Automatic<sup>HD</sup></AppButton></li>
+                    </ul>
+                </div>
+                break;
+
+            
+
+            case VideoSettingsMenuType.Language:
+                <div>
+                    <AppButton Variant="Variant.Empty" OnClick="() => SettingsMenuType = VideoSettingsMenuType.Video">← Back</AppButton>
+                    <p>Language settings here</p>
+                </div>
+                break;
+
+            case VideoSettingsMenuType.DisplaySpeed:
+                <div>
+                    <AppButton Variant="Variant.Empty" OnClick="() => SettingsMenuType = VideoSettingsMenuType.Video">← Back</AppButton>
+                    <p>Display speed settings here</p>
+                </div>
+                break;
+
+            default:
+                <p>Unknown settings menu type.</p>
+                break;
+        }
+
+    </div>
+</div>
+
+@code {
+    private VideoSettingsMenuType SettingsMenuType { get; set; } = VideoSettingsMenuType.Video;
+
+    [Parameter]
+    public EventCallback OnClose { get; set; }
+
+    public enum VideoSettingsMenuType
+    {
+        Video,
+        Quality,
+        Language,
+        DisplaySpeed
+    }
+}

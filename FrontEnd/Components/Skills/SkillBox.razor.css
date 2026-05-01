@@ -1,0 +1,26 @@
+﻿.skills {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    position: relative;
+    flex: 1;
+    border: 3px solid var(--skill-color);
+    border-radius: .6rem;
+    background-color: rgba(0, 0, 0, 0.20);
+    font-weight: bold;
+}
+
+    .skills::before {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        height: 100%;
+        aspect-ratio: 1;
+    }
+
+.skills ::deep svg{
+    height: 1lh;
+    width: auto;
+}

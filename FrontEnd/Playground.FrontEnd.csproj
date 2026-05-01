@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BackEnd\Playground.BackEnd.csproj" />
+      <ProjectReference Include="..\Data\Playground.Data.csproj" />
+      <ProjectReference Include="..\Lib\Playground.Lib.csproj" />
+      <ProjectReference Include="..\Services\Playground.Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.2" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="10.0.2" />
+    </ItemGroup>
+
+</Project>
