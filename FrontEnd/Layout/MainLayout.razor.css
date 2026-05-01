@@ -1,7 +1,10 @@
-.content {
+.page-layout {
     --side-site-padding: 5vw;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "header header" "aside main";
+    height: 100vh;
 }
 
 header {
@@ -9,6 +12,16 @@ header {
     top: 0;
     backdrop-filter: blur(10px);
     z-index: 2;
+    grid-area: header;
+    background-color: white;
+}
+
+aside {
+    position: sticky;
+    top: 0;
+    height: 100%;
+    grid-area: aside;
+    background-color: white;
 }
 
 main {

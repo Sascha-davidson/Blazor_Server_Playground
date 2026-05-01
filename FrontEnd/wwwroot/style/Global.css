@@ -302,8 +302,8 @@ body {
     font-family: 'Sora', Arial, Helvetica, sans-serif;
     font-size: var(--min-font-size);
     line-height: 1.5;
-    color: var(--color-light, #f5f5f5);
-    background-color: #232533;
+    color: var(--color-dark, #141414);
+    background-color: #f5f5f5;
 }
 
 /* Commponents reconnect modal
